@@ -177,8 +177,8 @@
 
 %\titlelabel{(\thesubsection)}
 %\titlelabel{(\thesubsection)\quad}
-\usepackage{listings}
-\lstloadlanguages{[5.2]Mathematica}
+%\usepackage{listings}
+%\lstloadlanguages{[5.2]Mathematica}
 \usepackage{babel}
 \newcommand{\ffac}[2]{{(#1)}^{\underline{#2}}}
 \usepackage{color}
@@ -306,11 +306,26 @@
 \newcommand{\yap}{y^{\avec{\alpha}'}}
 \newcommand{\yb}{y^{\avec{\beta}}}
 \newcommand{\yg}{y^{\avec{\gamma}}}
-\newcommand{\bls}{\mathrm{B}\ell_{(0,0)}\AA^2_k}
+\newcommand{\blo}[2]{\mathrm{Bl}_{#1}{#2}}
+\newcommand{\blzx}{\blo{Z}{X}}
 \newcommand{\cech}{\v Cech~}
 \newcommand{\ucal}{{ \mathcal{U}}}
 \begin{document}\maketitle
-	\prob{1}\prt{1}
+	\prob{1}We let $A$ be a ring, $\afr \triangleleft A$, $X=\spec A$, $Z=\spec A/\afr$, and $\blzx=\proj A[\afr T]$.
+	\begin{prop*}
+		The scheme theoretic preimage $E_Z(Z):=Z\times_X \blzx$ of $Z$ w/r/t the projection $\blzx\to X$ is an effective Cartier divisor.
+	\end{prop*}\begin{proof}\prt{1}
+\begin{lemma}
+	For any $a\in \afr$, $\Gamma(D_+(aT), \OO_{\blzx})=(A[\afr T]_{aT})_0$ is isomorphic to the subalgebra $A[a^{-1}\afr]=A\oplus a^{-1}\afr\oplus a^{-2}\afr^2\oplus \dots\subset A_a$
+\end{lemma}
+\begin{subproof}
+We note that any element $x\in(A[\afr T]_{aT})_0$ can be written $x=\frac{bT^k}{(aT)^k}$ where $b\in\afr^k$, while any $y\in A[a^{-1}A]$ can be written $\frac{c}{a^\ell}$ where $c\in \afr^\ell$. We construct $\phi:(A[\afr T]_{aT})_0\to A[a^{-1}A]$ by $\frac{bT^k}{(aT)^k}\mapsto \frac{b}{a^k}$ and wish to show $\phi$ is an isomorphism. To show that $\phi$ is well-defined, we suppose $\frac{bT^k}{(aT)^k}=\frac{b'T^{\ell}}{(aT)^\ell}$. Then, we have that for some $r$, $$(aT)^r\left((aT)^\ell bT^k-(aT)^kb'T^\ell\right)=0$$ in $A[\afr T]$. We view $A[\afr T]$ as a subalgebra of $A[T]$. Then, we have that $$T^{\ell+k+r}\left(a^{r+\ell} b-a^{r+k}b'\right)=0$$
+As $T$ is a nonzero-divisor in $A[T]$, we have that $a^{r+\ell} b-a^{r+k}b'=0$ in $A\subset A[T]$. Thus, in $A_a$, we have that $\frac{b}{a^k}=\frac{b'}{a^\ell}$, as desired, so our $\phi$ is indeed well-defined. Injectivity and surjectivity then come along easily: to see injectivity, we suppose $\phi(\frac{b}{(aT)^k})=\phi(\frac{b'}{(aT)^\ell})$, i.e. $\frac{b}{a^k}=\frac{b'}{a^\ell}$. We then have that there is some $r$ such that, in $A$, 
+$$a^r(ba^{\ell}-b'a^k)=0$$ Then, in $A[T]$, we multiply through by $T^{k+\ell+r}$ to yield
+$$T^{k+\ell+r}a^r(ba^{\ell}-b'a^k)=(aT)^r\left((aT)^\ell bT^k-(aT)^kb'T^\ell\right)=0$$
+Thus, we have that $\frac{bT^k}{(aT)^k}=\frac{b'T^{\ell}}{(aT)^\ell}$. Finally, surjectivity follows obviously from what we have done so far. If $x=\frac{bT}{a^k}\in A[a^{-1}\afr],$ then, $x=\phi(\frac{bT^k}{(aT)^k})$.
+\end{subproof}
+\end{proof}
 	\prob{4}\emph{I'm only convinced that this is even true if }
 	\prob{5}
 \prt{1} \begin{prompt*}
