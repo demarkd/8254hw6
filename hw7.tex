@@ -317,31 +317,8 @@
 \newcommand{\cech}{\v Cech~}
 \newcommand{\ucal}{{ \mathcal{U}}}
 \begin{document}\maketitle
-	\prob{1}We let $A$ be a ring, $\afr \triangleleft A$, $X=\spec A$, $Z=\spec A/\afr$, and $\blzx=\proj A[\afr T]$.
-	\begin{prop*}
-		The scheme theoretic preimage $E_Z(Z):=Z\times_X \blzx$ of $Z$ w/r/t the projection $\blzx\to X$ is an effective Cartier divisor.
-	\end{prop*}\begin{proof}\prt{1}
-\begin{lemma}
-	For any $a\in \afr$, $\Gamma(D_+(aT), \OO_{\blzx})=(A[\afr T]_{aT})_0$ is isomorphic to the subalgebra $A[a^{-1}\afr]=A\oplus a^{-1}\afr\oplus a^{-2}\afr^2\oplus \dots\subset A_a$
-\end{lemma}
-\begin{subproof}
-We note that any element $x\in(A[\afr T]_{aT})_0$ can be written $x=\frac{bT^k}{(aT)^k}$ where $b\in\afr^k$, while any $y\in A[a^{-1}A]$ can be written $\frac{c}{a^\ell}$ where $c\in \afr^\ell$. We construct $\phi:(A[\afr T]_{aT})_0\to A[a^{-1}A]$ by $\frac{bT^k}{(aT)^k}\mapsto \frac{b}{a^k}$ and wish to show $\phi$ is an isomorphism. To show that $\phi$ is well-defined, we suppose $\frac{bT^k}{(aT)^k}=\frac{b'T^{\ell}}{(aT)^\ell}$. Then, we have that for some $r$, $$(aT)^r\left((aT)^\ell bT^k-(aT)^kb'T^\ell\right)=0$$ in $A[\afr T]$. We view $A[\afr T]$ as a subalgebra of $A[T]$. Then, we have that $$T^{\ell+k+r}\left(a^{r+\ell} b-a^{r+k}b'\right)=0$$
-As $T$ is a nonzero-divisor in $A[T]$, we have that $a^{r+\ell} b-a^{r+k}b'=0$ in $A\subset A[T]$. Thus, in $A_a$, we have that $\frac{b}{a^k}=\frac{b'}{a^\ell}$, as desired, so our $\phi$ is indeed well-defined. Injectivity and surjectivity then come along easily: to see injectivity, we suppose $\phi(\frac{b}{(aT)^k})=\phi(\frac{b'}{(aT)^\ell})$, i.e. $\frac{b}{a^k}=\frac{b'}{a^\ell}$. We then have that there is some $r$ such that, in $A$, 
-$$a^r(ba^{\ell}-b'a^k)=0$$ Then, in $A[T]$, we multiply through by $T^{k+\ell+r}$ to yield
-$$T^{k+\ell+r}a^r(ba^{\ell}-b'a^k)=(aT)^r\left((aT)^\ell bT^k-(aT)^kb'T^\ell\right)=0$$
-Thus, we have that $\frac{bT^k}{(aT)^k}=\frac{b'T^{\ell}}{(aT)^\ell}$. Finally, surjectivity follows obviously from what we have done so far. If $x=\frac{bT}{a^k}\in A[a^{-1}\afr],$ then, $x=\phi(\frac{bT^k}{(aT)^k})$.
-\end{subproof}
-\end{proof}
-	\prob{4}
-	\prob{5}
-\prt{1} \begin{prompt*}
-Determine the \cech cohomology of the structure sheaf of $X$, the affine line with doubled origin with respect to the usual open affine cover $\ucal$ consisting of two open affine subsets isomorphic to $\AA^1_k$.
-\end{prompt*}
-\begin{proof}[Computation]
-We name our two open affines $U_0$ and $U_1$ with each $U_i\cong \spec k[x]=\AA^1_k$. We have that $C^0(\ucal,\OO_X)=\OO_X(U_1)\otimes \OO_X(U_2)=k[x]\oplus k[x]$. We also have only one nontrivial twofold intersection of the sets in our cover and thus an element of $C^1(\ucal,\OO_X)$ is uniquely determined by its $U_{01}$ component, that is $C^1(\ucal,\OO_X)=\OO_X(U_{01})=k[x,x^{-1}]$. We now compute our only nontrivial differential $d^0$ on an arbitrary element $(g_0(x),g_1(x))\in C^0(\ucal,\OO_X)$ and have that $d^0:(g_0(x),g_1(x))=g_1(x)-g_0(x)$ as our restriction maps are both the standard localization maps $x\mapsto x$. Thus, $H^0(\ucal,\OO_X)=\ker d^0$, which is the diagonal subring $D(k[x]\oplus k[x])=\{(g(x),g(x)): g(x)\in k[x]\}\cong k[x]$. We also have that (as $C^2=0$) $H^1(\ucal, \OO_X)=\coker d^0=k[x,x^{-1}]/k[x]$ as an Abelian group (or module over the ring of global sections $k[x]$). \end{proof}
-\begin{prompt*}
-	Determine the \cech cohomology of the structure sheaf of $\PP^1_k$ with respect to the usual open affine cover $\ucal$ consisting of two open affine subsets $D_+(x_0),D_+(x_1)$ isomorphic to $\AA^1_k$.
-\end{prompt*}
-\begin{proof}[Computation]
-	We keep our setup from before, only changing our restriction map $\rho_{01}^1$ on $U_1$ to the map $x\mapsto x^{-1}$. We have still that $C^0(\ucal,\OO_X)=\OO_X(U_1)\otimes \OO_X(U_2)=k[x]\oplus k[x]$ and $C^1(\ucal,\OO_X)=\OO_X(U_{01})=k[x,x^{-1}]$. We now compute our only nontrivial differential $d^0$ on an arbitrary element $(g_0(x),g_1(x))\in C^0(\ucal,\OO_X)$ and have that $d^0:(g_0(x),g_1(x))=g_1(x^{-1})-g_0(x)$, with the $x^{-1}$ in the argument of $g_1$ forced by our restriction map $\rho_{01}^1$. We note that if $g_1$ is homogenous of positive degree, then $g_1(x^{-1})$ is homogenous of negative degree, while $g_0(x)$ is of nonnegative degree. Thus, only degree 0 elements are in the kernel of $d^0$, that is $\ker d^0=H^0(\ucal,\OO_X)=k$. We claim that $d^0$ is a surjection. Indeed, $C_1(\ucal,\OO_X)$ is the ring of Laurent polynomials in $k$; we let $g(x)=a_mx^m+\dots+a_{-n}x^{-n}$ be an arbitrary element. Then, we let $g_1(x)=\sum_{k=0}^na_{-k}x^k$ and $g_0(x)=\sum_{k=1}^m-a_{k}x^k$ and have that $d^0(g_0,g_1)=g$, thus showing that $H^1(\ucal, \OO_X)=0$. \end{proof}
+\prob{7}
+\begin{prop*}
+
+\end{prop*}
 \end{document}
