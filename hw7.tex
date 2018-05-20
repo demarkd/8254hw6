@@ -11,7 +11,7 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{relsize}
-
+\newcommand{\tosm}{\xrightarrow{\sim}}
 \usetikzlibrary{arrows, matrix}
 %\usepackage{natbib}
 %\bibliographystyle{plainnat}
@@ -68,6 +68,8 @@
 	\end{align}}
 \renewcommand{\AA}{\mathbb{A}}
 \newcommand{\Aa}{\mathscr{A}}
+\newcommand{\Ff}{\mathscr{F}}
+\newcommand{\Hh}{\mathscr{H}}
 \newcommand{\LL}{\mathcal{L}}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\DD}{\mathbb{D}}
@@ -80,7 +82,7 @@
 \newcommand{\BB}{\mathcal{B}}
 \newcommand{\Pcal}{\mathcal{P}}
 \newcommand{\FF}{\mathbb{F}}
-\newcommand{\Ff}{\mathscr{F}}
+%\newcommand{\Ff}{\mathscr{F}}
 \newcommand{\Gg}{\mathscr{G}}
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\Fcal}{\mathcal{F}}
@@ -316,9 +318,35 @@
 \newcommand{\blzx}{\blo{Z}{X}}
 \newcommand{\cech}{\v Cech~}
 \newcommand{\ucal}{{ \mathcal{U}}}
+%\newcommand{\Gg}{\mathscr{G}}
 \begin{document}\maketitle
-\prob{7}
-\begin{prop*}
-
-\end{prop*}
+\prob{2}\begin{prop*} We let $X$ be a \textbf{ringed}\footnote{I'm sure the proposition is true in general, but there is one snag I have not resolved without this weakening. See next footnote for where this is relevant.} space, ${\Ff}$ a sheaf of Abelian groups on $X$, and $\ufr$ an open covering on $X$ with the property that for any finite $\{U_{i_1},\dots,U_{i_p}\}\subset \ufr$, $H^k\left(\bigcap_{j=1}^pU_{i_j},\restr{\Ff}{\bigcap_{j=1}^pU_{i_j}}\right)=0$ for all $k>0$. Then, the natural maps $H^i(\ufr,\Ff)\to H^i(X,\Ff)$ are isomorphisms for any $i\geq 0$. 
+	\end{prop*}
+\begin{proof}
+	The case $i=0$ is ensured by \cite[III.4.1]{HSAG}. As sheaves of Abelian groups on $X$ have enough injectives by \cite[III.2.3]{HSAG}, we may embed $\Ff\hookrightarrow\Gg$ where $\Gg$ is injective, inducing exact sequence \begin{equation}\label{p2sos}\begin{tikzcd}
+	0\arrow[r]&\Ff\arrow[r]&\Gg\arrow[r]&\Hh\arrow[r]&0.
+	\end{tikzcd}\end{equation}
+	We let $V$ be an arbitrary finite intersection of sets in $U$. By hypothesis, $H^i(V,\restr{\Ff}{V})=0$ for all $i>0$. In particular, $H^1(V,\restr{\Ff}{V})=0$ so the long exact sequence for the right-derived functor cohomology then gives an exact sequence of Abelian groups
+	$$0\to\Gamma(\restr{\Ff}{V},V)\to \Gamma(\restr{\Gg}{V},V)\to \Gamma(\restr{\Hh}{V},V)\to 0$$
+	functorial in $V$ as it is induced by a sequence of sheaves \eqref{p2sos}. Thus, taking products along all $p$-fold intersections in $V$, by a basic result on (finite) products of exact sequences, we yield an exact sequence 
+	\begin{equation*}
+		\begin{tikzcd}
+		0\arrow[r]& C^p(\ufr,\Ff)\arrow[r]& C^p(\ufr,\Gg)\arrow[r]&C^p(\ufr,\Hh)\arrow[r]&0
+		\end{tikzcd}
+	\end{equation*}
+	And by functoriality, we have that this extends to an exact sequence of complexes
+		\begin{equation}
+	\begin{tikzcd}\label{p2soc}
+	0\arrow[r]& C^\bullet(\ufr,\Ff)\arrow[r]& C^\bullet(\ufr,\Gg)\arrow[r]&C^\bullet(\ufr,\Hh)\arrow[r]&0
+	\end{tikzcd}
+	\end{equation}
+As $\Gg$ is injective, its higher \cech cohomology disappears by \cite[III.2.4-5]{HSAG}. Thus, the long exact sequence for homology induced by \eqref{p2soc} gives short exact sequences \begin{equation}\begin{tikzcd}0\arrow[r]& H^0(\ufr,\Ff)\arrow[r]&H^0(\ufr,\Gg)\arrow[r]&H^0(\ufr,\Hh)\arrow[r]&H^1(\ufr,\Ff)\arrow[r]&0\end{tikzcd}\end{equation}
+and for $p>0$
+\begin{equation}\begin{tikzcd}0\arrow[r]&H^p(\ufr,\Hh)\arrow[r]&H^{p+1}(\ufr,\Ff)\arrow[r]&0\end{tikzcd}\end{equation}
+The natural map $H(\ufr,\cdot)\to H(X,\cdot)$ now gives a morphism of exact sequences
+\begin{equation}\begin{tikzcd}0\arrow[r]& H^0(\ufr,\Ff)\arrow[r]\arrow[d]&H^0(\ufr,\Gg)\arrow[r]\arrow[d]&H^0(\ufr,\Hh)\arrow[r]\arrow[d]&H^1(\ufr,\Ff)\arrow[r]\arrow[d]&0\\
+0\arrow[r]& H^0(X,\Ff)\arrow[r]&H^0(X,\Gg)\arrow[r]&H^0(X,\Hh)\arrow[r]&H^1(X,\Ff)\arrow[r]&0\
+\end{tikzcd}\end{equation}
+As we know the first three vertical morphisms are isomorphisms, it follows $H^1(\ufr,\Ff)\tosm H^1(X,\Ff)$.\todo{$p>1$}
+\end{proof}
 \end{document}
