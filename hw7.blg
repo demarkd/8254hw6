@@ -1,0 +1,15 @@
+[0] Config.pm:354> INFO - This is Biber 2.7
+[0] Config.pm:357> INFO - Logfile is 'hw7.blg'
+[169] biber-MSWIN32:303> INFO - === 
+[390] Biber.pm:359> INFO - Reading 'hw7.bcf'
+[475] Biber.pm:835> INFO - Found 1 citekeys in bib section 0
+[655] Biber.pm:3670> INFO - Processing section 0
+[784] Biber.pm:3840> INFO - Looking for bibtex format file 'algeo.bib' for section 0
+[786] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[838] bibtex.pm:1292> INFO - Found BibTeX data source 'algeo.bib'
+[984] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[984] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[985] Biber.pm:3499> INFO - Sorting list 'anyt/global/' of type 'entry' with scheme 'anyt' and locale 'en-US'
+[985] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
+[986] bbl.pm:608> INFO - Writing 'hw7.bbl' with encoding 'latin9'
+[987] bbl.pm:712> INFO - Output to hw7.bbl
